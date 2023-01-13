@@ -25,6 +25,7 @@ def find_score(state):
     in_row = 0
     current_score = 0
     indirect_score = 0
+    community_score = 0
     for row in range(3):
         for cell in state[row]:
             if cell != 0:
@@ -36,7 +37,10 @@ def find_score(state):
             if in_row == 3:
                 in_row = 0
                 current_score +=3/(row + 1)
-    
+        for i in range(2,5):
+            print()
+            # community score stuff
+
     return current_score + indirect_score
 
 def change_state(state, change_row, change_col):
