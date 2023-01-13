@@ -16,7 +16,18 @@ def num_Empty_Positions(state):
         i += 1
     return count
 
-
-def evaluate(state):
+# Current Score
+# Potential for more score
+# Three in the community area
+def find_score(state):
     for cell in state:
-        print("hi")
+        fdfd
+
+
+state = [[]]
+
+for colums in range(3):
+    for rows in range(9):
+        state
+
+
