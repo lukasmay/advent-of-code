@@ -37,11 +37,15 @@ def find_score(state):
             if in_row == 3:
                 in_row = 0
                 current_score +=3/(row + 1)
-        for i in range(2,5):
-            print()
-            # community score stuff
+        for i in range(3,5):
+            if state[row][i] == 1 and community_score < 3:
+                community_score += 1
 
-    return current_score + indirect_score
+                
+    print("current_score: " + str(current_score))
+    print("indirect_score: " + str(indirect_score))
+    print("community_score: " + str(community_score))
+    return current_score + indirect_score + community_score
 
 def change_state(state, change_row, change_col):
     """updates the state at possition specified to 1. This means it has an item"""
@@ -49,10 +53,12 @@ def change_state(state, change_row, change_col):
 
 
 state = [[0 for y in range(9)]for x in range(3)]
-change_state(state, 0, 0)
-change_state(state, 0, 1)
-change_state(state, 0, 2)
-change_state(state, 1, 2)
-change_state(state, 1, 3)
 
-print(find_score(state))
+while True:
+    print(" 1  2  3  4  5  6  7  8  9")
+    for i in range(3):
+        print(state[i])
+    change_state(state, int(input("Row: "))-1, int(input("Col: "))-1)
+    find_score(state)
+    print()
+    
