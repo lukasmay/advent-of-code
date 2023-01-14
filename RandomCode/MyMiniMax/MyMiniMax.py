@@ -5,6 +5,61 @@ import time
 from os import system
 
 
+
+
+class GameNode:
+    def __init__(self, name, value=1, parent=None):
+        self.Name = name      # a char
+        self.value = value    # an int
+        self.parent = parent  # a node reference
+        self.children = []    # a list of nodes
+
+    def addChild(self, childNode):
+        self.children.append(childNode)
+
+class GameTree:
+    def __init__(self):
+        self.root = None
+
+    def build_tree(self, data_list):
+        """
+        :param data_list: Take data in list format
+        :return: Parse a tree from it
+        """
+        self.root = GameNode(data_list.pop(0))
+        for elem in data_list:
+            self.parse_subtree(elem, self.root)
+
+    def parse_subtree(self, data_list, parent):
+        # base case
+        if type(data_list) is tuple:
+            # make connections
+            leaf_node = GameNode(data_list[0])
+            leaf_node.parent = parent
+            parent.addChild(leaf_node)
+            # if we're at a leaf, set the value
+            if len(data_list) == 2:
+                leaf_node.value = data_list[1]
+            return
+
+        # recursive case
+        tree_node = GameNode(data_list.pop(0))
+        # make connections
+        tree_node.parent = parent
+        parent.addChild(tree_node)
+        for elem in data_list:
+            self.parse_subtree(elem, tree_node)
+
+        # return from entire method if base case and recursive case both done running
+        return
+
+def parse_data_as_list(fname):
+    with open(fname, "r") as f:
+        data_as_string = f.read()
+        print (data_as_string)
+        data_list = literal_eval(data_as_string)
+    return data_list
+
 def num_empty_positions(state):
     """Finds and Returns the amount of unplaced spaces left on the grid"""
     count = 0
@@ -47,18 +102,32 @@ def find_score(state):
     print("community_score: " + str(community_score))
     return current_score + indirect_score + community_score
 
-def change_state(state, change_row, change_col):
+def change_state(state2, change_row, change_col):
     """updates the state at possition specified to 1. This means it has an item"""
-    state[change_row][change_col] = 1
+    state2[change_row][change_col] = 1
+    return state2
 
 
-state = [[0 for y in range(9)]for x in range(3)]
+def best_move(state, depth):
+    if depth == 0:
+        stuff = 0
+    else:
+        best_move(state, depth-1)
+    
+    
+        
 
-while True:
-    print(" 1  2  3  4  5  6  7  8  9")
-    for i in range(3):
-        print(state[i])
-    change_state(state, int(input("Row: "))-1, int(input("Col: "))-1)
-    find_score(state)
-    print()
+current_state = [[0 for y in range(9)]for x in range(3)]
+
+#while True:
+#    print(" 1  2  3  4  5  6  7  8  9")
+#    for i in range(3):
+#        print(state[i])
+#    change_state(state, int(input("Row: "))-1, int(input("Col: "))-1)
+#    find_score(state)
+#    print()
+
+data_tree = GameTree()
+data_tree.build_tree(data_list)
+best_move(current_state, 3)
     

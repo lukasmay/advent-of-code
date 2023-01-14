@@ -90,7 +90,7 @@ def main():
     data_tree = GameTree()
     data_tree.build_tree(data_list)
     test = AlphaBeta(data_tree)
-    #test.max_value
+    test.max_value
     check = MiniMax(data_tree)
     check.minimax(check.currentNode)
 
