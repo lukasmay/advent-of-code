@@ -84,13 +84,13 @@ class GameTree:
 
 def main():
     #filename = sys.argv[]
-    filename = "RandomCode/treefile.txt"
+    filename = "RandomCode\\TestMiniMax\\treefile.txt"
     print ("hello world! " + filename)
     data_list = parse_data_as_list(filename)
     data_tree = GameTree()
     data_tree.build_tree(data_list)
     test = AlphaBeta(data_tree)
-    test.max_value
+    # test.max_value
     check = MiniMax(data_tree)
     check.minimax(check.currentNode)
 
