@@ -12,7 +12,7 @@ def count_up(base, step=1, count=10, start=0):
 
 
 def findModeCount(num, base, start):
-    result_num = count_up(base, count=num, start=start)
+    result_num = count_up(base, count=num, start=int(start, base))
     digit_count = []
     for i in result_num:
         for j in i:
