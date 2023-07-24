@@ -1,4 +1,4 @@
-file = open('input.txt','r')
+file = open('/Users/lukasmay/Documents/Github/AdventOfCode/2022/Day1/input.txt','r')
 mostCalories = [0]
 currentElf = 0
 for line in file:

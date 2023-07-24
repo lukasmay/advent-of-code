@@ -6,7 +6,7 @@ import java.util.List;
 public class Day7 {
     public static void main(String[] args) throws Exception{
 
-        BufferedReader br = new BufferedReader(new FileReader("2022/Day7/input.txt"));
+        BufferedReader br = new BufferedReader(new FileReader("/Users/lukasmay/Documents/Github/AdventOfCode/2022/Day7/input.txt"));
 
         DirectoryEntry rootDirectory = new DirectoryEntry(null,"/");
         DirectoryEntry currentDirectory = rootDirectory;
