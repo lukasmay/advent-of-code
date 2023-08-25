@@ -39,7 +39,7 @@ public class Day13{
             int lineCounter = 0;
             int solution = 0;
             try {
-                Scanner scanner = new Scanner(new File("2022/input/day13.txt"));
+                Scanner scanner = new Scanner(new File("/Users/lukasmay/Documents/Github/AdventOfCode/2022/input/day13.txt"));
                 while (scanner.hasNextLine()) {
                     line = scanner.nextLine();
                     if (line.trim().equals("")){

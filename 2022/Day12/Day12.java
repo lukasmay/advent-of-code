@@ -17,7 +17,7 @@ public class Day12 {
         int a = 0;
         int xE,yE,xS,yS = 0;
         try {
-            Scanner scanner = new Scanner(new File("2022/input/day12.txt"));
+            Scanner scanner = new Scanner(new File("/Users/lukasmay/Documents/Github/AdventOfCode/2022/input/day12.txt"));
             while (scanner.hasNextLine()) {
                 line = scanner.nextLine();
                 map[a] = line.toCharArray();

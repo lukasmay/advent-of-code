@@ -19,7 +19,7 @@ public class Day16{
             ArrayList<Valve> valves = new ArrayList<>();
             
             try {
-                Scanner scanner = new Scanner(new File("2022/input/day16.txt"));
+                Scanner scanner = new Scanner(new File("/Users/lukasmay/Documents/Github/AdventOfCode/2022/input/day16.txt"));
                 while (scanner.hasNextLine()) {
                     line = scanner.nextLine();
                     valves.add(new Valve(Integer.valueOf(line.substring(23, line.indexOf(";"))), line.substring(6, 8), line.substring(line.indexOf(",")-2).split(",")));

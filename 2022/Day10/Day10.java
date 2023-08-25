@@ -14,7 +14,7 @@ public class Day10 {
         String line = "";
         ArrayList<String> inputs = new ArrayList<>();
         try {
-            Scanner scanner = new Scanner(new File("2022/input/day10.txt"));
+            Scanner scanner = new Scanner(new File("/Users/lukasmay/Documents/Github/AdventOfCode/2022/input/day10.txt"));
             while (scanner.hasNextLine()) {
                 line = scanner.nextLine();
                 inputs.add(line);
@@ -74,7 +74,7 @@ public class Day10 {
         String line = "";
         ArrayList<String> inputs = new ArrayList<>();
         try {
-            Scanner scanner = new Scanner(new File("2022/input/day10.txt"));
+            Scanner scanner = new Scanner(new File("/Users/lukasmay/Documents/Github/AdventOfCode/2022/input/day10.txt"));
             while (scanner.hasNextLine()) {
                 line = scanner.nextLine();
                 inputs.add(line);

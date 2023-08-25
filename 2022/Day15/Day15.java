@@ -21,7 +21,7 @@ public class Day15{
             int minY = 0;
             ArrayList<Integer[]> location = new ArrayList<>();
             try {
-                Scanner scanner = new Scanner(new File("2022/input/day15.txt"));
+                Scanner scanner = new Scanner(new File("/Users/lukasmay/Documents/Github/AdventOfCode/2022/input/day15.txt"));
                 Integer[] sencorLocation = {0, 0};
                 Integer[] beaconLocation = {0, 0};
                 while (scanner.hasNextLine()) {

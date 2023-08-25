@@ -36,7 +36,7 @@ public class Day11 {
         String ifFalse = "";
 
         try {
-            Scanner scanner = new Scanner(new File("2022/input/day11.txt"));
+            Scanner scanner = new Scanner(new File("/Users/lukasmay/Documents/Github/AdventOfCode/2022/input/day11.txt"));
             while (scanner.hasNextLine()) {
                 line = scanner.nextLine();
                 

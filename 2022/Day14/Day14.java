@@ -26,7 +26,7 @@ public class Day14{
             String[][] cave = new String[50][30];
             
             try {
-                Scanner scanner = new Scanner(new File("2022/input/day14.txt"));
+                Scanner scanner = new Scanner(new File("/Users/lukasmay/Documents/Github/AdventOfCode/2022/input/day14.txt"));
                 while (scanner.hasNextLine()) {
                     line = scanner.nextLine();
                     String[] rockLinePostition = line.split(" ");

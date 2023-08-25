@@ -17,7 +17,7 @@ public class Day17{
 
         public static void part1(){
             try {
-                Scanner scanner = new Scanner(new File("2022/input/day17.txt"));
+                Scanner scanner = new Scanner(new File("/Users/lukasmay/Documents/Github/AdventOfCode/2022/input/day17.txt"));
                 while (scanner.hasNextLine()) {
                     char[] line = scanner.nextLine().toCharArray();
                     int rockType = 0;
