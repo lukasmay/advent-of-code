@@ -119,6 +119,8 @@ public class Day8 {
         }
     }
 
+    //TODO Check the score ajustment (Only Implimented in Left check so far)
+
 
     public static void part2(int sizeOfForest){
         String line = "";
@@ -160,9 +162,8 @@ public class Day8 {
                         while (larger && 0 <= counter && goodTree){
                             if (value <= forest[i][counter]){
                                 larger = false;
-                            } else {
-                                score++;
-                            }
+                            } 
+                            score++;
                             counter--;
                         }
                         solutionHolder.add(score);
@@ -171,7 +172,7 @@ public class Day8 {
                         // Looks Right
                         larger = true;
                         counter = a + 1;
-                        while (larger &&  sizeOfForest > counter && goodTree){
+                        while (larger &&  sizeOfForest > counter){
                             if (value <= forest[i][counter]){
                                 larger = false;
                             } else {
@@ -184,7 +185,7 @@ public class Day8 {
 
                         //This will loop to check visible from up
                         larger = true;
-                        counter = a-1;
+                        counter = i - 1;
                         while (larger && 0 <= counter && goodTree){
                             if (value <= forest[counter][a]){
                                 larger = false;
@@ -211,7 +212,6 @@ public class Day8 {
                             counter++;
                         }
                         solutionHolder.add(score);
-                        score = 0;
 
                         //Checks largest score so far
                         int holder = 0;
