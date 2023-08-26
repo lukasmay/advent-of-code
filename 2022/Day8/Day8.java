@@ -6,8 +6,8 @@ import java.util.ArrayList;
 
 public class Day8 {
     public static void main(String[] args) {
-        int sizeOfForest = 99;
-		part1(sizeOfForest);
+        int sizeOfForest = 5;//99;
+		//part1(sizeOfForest);
 		part2(sizeOfForest);
 	}
 
@@ -28,7 +28,7 @@ public class Day8 {
                 }
                 counter++;
             }
-
+            System.out.println("Size of Forest: " + forest);
             int solution = 0;
             counter = 0;
             boolean larger = true;
@@ -49,7 +49,7 @@ public class Day8 {
                             if (value <= forest[i][counter]){
                                 larger = false;
                             }
-                            //System.out.println("Left Location: "+ i + " "+ counter + " Value: "+value+" Result: " + larger);
+                            //System.out.println("Left Location: " + i + " " + counter + " Value: " + value + " Result: " + larger);
                             counter++;
                         }
                         if (larger && goodTree){//actualy add to total if visible all the way
@@ -135,7 +135,7 @@ public class Day8 {
                 }
                 counter++;
             }
-
+            
             int score = 0;
             ArrayList<Integer> solutionHolder = new ArrayList<>();
             int solution = 0;
@@ -147,7 +147,7 @@ public class Day8 {
             for (int i = 0; i < sizeOfForest; i++){
                 for (int a = 0; a < sizeOfForest; a++){ //This will check all the trees through this code
                     if (i == 0 || a == 0 || i == sizeOfForest-1 || a == sizeOfForest-1){ //If tree is on the outside
-                        
+
                     } else {
                         value = forest[i][a];
                         larger = true;
@@ -168,7 +168,7 @@ public class Day8 {
                         solutionHolder.add(score);
                         score = 0;
 
-                        //This will loop to check visible from the right
+                        // Looks Right
                         larger = true;
                         counter = a + 1;
                         while (larger &&  sizeOfForest > counter && goodTree){
@@ -177,7 +177,6 @@ public class Day8 {
                             } else {
                                 score++;
                             }
-                            //System.out.println("Right Location: "+ i + " "+ counter + " Value: "+value+" Result: " + larger);
                             counter++;
                         }
                         solutionHolder.add(score);
