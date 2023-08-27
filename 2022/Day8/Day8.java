@@ -1,13 +1,12 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-import java.util.ArrayList;
 
 
 public class Day8 {
     public static void main(String[] args) {
-        int sizeOfForest = 5;//99;
-		//part1(sizeOfForest);
+        int sizeOfForest = 99;
+		part1(sizeOfForest);
 		part2(sizeOfForest);
 	}
 
@@ -28,7 +27,6 @@ public class Day8 {
                 }
                 counter++;
             }
-            System.out.println("Size of Forest: " + forest);
             int solution = 0;
             counter = 0;
             boolean larger = true;
@@ -49,13 +47,11 @@ public class Day8 {
                             if (value <= forest[i][counter]){
                                 larger = false;
                             }
-                            //System.out.println("Left Location: " + i + " " + counter + " Value: " + value + " Result: " + larger);
                             counter++;
                         }
                         if (larger && goodTree){//actualy add to total if visible all the way
                             solution++;
                             goodTree = false;
-                            //System.out.println("Left Location: "+ i + " "+ a);
                         }
 
                         //This will loop to check visible from the right
@@ -65,13 +61,11 @@ public class Day8 {
                             if (value <= forest[i][counter]){
                                 larger = false;
                             }
-                            //System.out.println("Right Location: "+ i + " "+ counter + " Value: "+value+" Result: " + larger);
                             counter++;
                         }
                         if (larger && goodTree){
                             solution++;
                             goodTree = false;
-                            //System.out.println("Right Location: "+ i + " "+ a);
                         }
 
                         //This will loop to check visible from up
@@ -82,13 +76,11 @@ public class Day8 {
                             if (value <= forest[counter][a]){
                                 larger = false;
                             }
-                            //System.out.println("Up Location: "+ counter + " "+ a+ " Value: "+value+" Result: " + larger);
                             counter++;
                         }
                         if (larger && goodTree){
                             solution++;
                             goodTree = false;
-                            //System.out.println("Up Location: "+ i + " "+ a);
                         }
 
                         //Check from down
@@ -99,20 +91,17 @@ public class Day8 {
                             if (value <= forest[counter][a]){
                                 larger = false;
                             }
-                            //System.out.println("Down Location: "+ counter + " "+ a+ " Value: "+value+" Result: " + larger);
                             counter++;
                         }
                         if (larger && goodTree){
                             solution++;
                             goodTree = false;
-                            //System.out.println("Down Location: "+ i + " "+ a);
                         }
-                        //System.out.println();
                     }
                 }
             }
             
-            System.out.println(solution);
+            System.out.println("Part 1: " + solution);
             scanner.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -141,7 +130,6 @@ public class Day8 {
             int solution = 0;
             counter = 0;
             boolean larger = true;
-            boolean check = true;
             int value = 0;
 
             for (int i = 0; i < sizeOfForest; i++){
@@ -150,9 +138,7 @@ public class Day8 {
 
                     } else {
                         value = forest[i][a];
-                        System.out.print("Value: " + value);
                         larger = true;
-                        check = true;
                         leftScore = 0;
                         rightScore = 0;
                         upScore = 0;
@@ -167,7 +153,6 @@ public class Day8 {
                             leftScore++;
                             counter--;
                         }
-                        System.out.print("  Left Score: " + leftScore);
 
                         // Looks Right
                         larger = true;
@@ -179,7 +164,6 @@ public class Day8 {
                             rightScore++;
                             counter++;
                         }
-                        System.out.print("  Right Score: " + rightScore);
 
                         // Looks Up
                         larger = true;
@@ -191,7 +175,6 @@ public class Day8 {
                             upScore++;
                             counter--;
                         }
-                        System.out.print("  Up Score: " + upScore);
                         
 
                         // Looks Down
@@ -205,7 +188,6 @@ public class Day8 {
                             downScore++;
                             counter++;
                         }
-                        System.out.print("  Down Score: " + downScore);
 
                         //Checks largest score so far
                         int holder = leftScore * rightScore * upScore * downScore;
@@ -213,12 +195,11 @@ public class Day8 {
                         if (holder > solution){
                             solution = holder;
                         }
-                        System.out.println("\n");
                     }
                 }
             }
             
-            System.out.println(solution);
+            System.out.println("Part 2: " + solution);
             scanner.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
