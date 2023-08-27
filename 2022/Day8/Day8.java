@@ -119,7 +119,6 @@ public class Day8 {
         }
     }
 
-    //TODO Check the score ajustment (Only Implimented in Left check so far)
 
 
     public static void part2(int sizeOfForest){
@@ -138,91 +137,83 @@ public class Day8 {
                 counter++;
             }
             
-            int score = 0;
-            ArrayList<Integer> solutionHolder = new ArrayList<>();
+            int leftScore, rightScore, upScore, downScore = 0;
             int solution = 0;
             counter = 0;
             boolean larger = true;
-            boolean goodTree = true;
             boolean check = true;
             int value = 0;
+
             for (int i = 0; i < sizeOfForest; i++){
                 for (int a = 0; a < sizeOfForest; a++){ //This will check all the trees through this code
                     if (i == 0 || a == 0 || i == sizeOfForest-1 || a == sizeOfForest-1){ //If tree is on the outside
 
                     } else {
                         value = forest[i][a];
+                        System.out.print("Value: " + value);
                         larger = true;
-                        goodTree = true;
                         check = true;
-                        score = 0;
+                        leftScore = 0;
+                        rightScore = 0;
+                        upScore = 0;
+                        downScore = 0;
 
                         // Looks left
                         counter = a-1;
-                        while (larger && 0 <= counter && goodTree){
+                        while (larger && (0 <= counter)){
                             if (value <= forest[i][counter]){
                                 larger = false;
                             } 
-                            score++;
+                            leftScore++;
                             counter--;
                         }
-                        solutionHolder.add(score);
-                        score = 0;
+                        System.out.print("  Left Score: " + leftScore);
 
                         // Looks Right
                         larger = true;
                         counter = a + 1;
-                        while (larger &&  sizeOfForest > counter){
+                        while (larger &&  (sizeOfForest > counter)){
                             if (value <= forest[i][counter]){
                                 larger = false;
-                            } else {
-                                score++;
                             }
+                            rightScore++;
                             counter++;
                         }
-                        solutionHolder.add(score);
-                        score = 0;
+                        System.out.print("  Right Score: " + rightScore);
 
-                        //This will loop to check visible from up
+                        // Looks Up
                         larger = true;
                         counter = i - 1;
-                        while (larger && 0 <= counter && goodTree){
+                        while (larger && (0 <= counter)){
                             if (value <= forest[counter][a]){
                                 larger = false;
-                            } else {
-                                score++;
                             }
+                            upScore++;
                             counter--;
                         }
-                        solutionHolder.add(score);
-                        score = 0;
+                        System.out.print("  Up Score: " + upScore);
                         
 
-                        //Check from down
+                        // Looks Down
                         larger = true;
                         counter = i + 1;
-                        while (larger &&  sizeOfForest > counter && goodTree){
+                        while (larger &&  sizeOfForest > counter){
                             
                             if (value <= forest[counter][a]){
                                 larger = false;
-                            } else {
-                                score++;
-                            }
-                            //System.out.println("Down Location: "+ counter + " "+ a+ " Value: "+value+" Result: " + larger);
+                            } 
+                            downScore++;
                             counter++;
                         }
-                        solutionHolder.add(score);
+                        System.out.print("  Down Score: " + downScore);
 
                         //Checks largest score so far
-                        int holder = 0;
-                        for (int s : solutionHolder){
-                            holder = holder * s;
-                        }
+                        int holder = leftScore * rightScore * upScore * downScore;
+
                         if (holder > solution){
                             solution = holder;
                         }
-                        solutionHolder.clear();
-                        //System.out.println();
+                        System.out.println("\n");
                     }
                 }
             }
