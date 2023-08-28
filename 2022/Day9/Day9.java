@@ -14,8 +14,8 @@ import java.util.HashMap;
 public class Day9 {
     public static void main(String[] args) {
         
-		part1();
-		//part2();
+		//part1();
+		part2();
 	}
 
     public static void part1(){
