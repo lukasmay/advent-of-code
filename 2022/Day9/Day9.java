@@ -143,7 +143,6 @@ public class Day9 {
             //tailHasBeen.forEach((key, value) -> System.out.println(key + ": " + value));
 
             System.out.println(tailHasBeen.size());
-            System.out.println("2443");
             scanner.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
