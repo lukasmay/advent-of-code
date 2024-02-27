@@ -6,7 +6,7 @@ public class Card {
     int number;
     int amount;
 
-    Card(String line) {
+    public Card(String line) {
         String[] parts = line.split(":");
         String[] winCards = parts[1].split("\\|")[0].trim().split(" ");
         String[] cards = parts[1].split("\\|")[1].trim().split(" ");
