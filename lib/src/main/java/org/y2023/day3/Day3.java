@@ -5,35 +5,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
-
-class Part {
-    int number;
-    List<int[]> locations;
-
-    Part(int number, List<int[]> locations) {
-        this.number = number;
-        this.locations = locations;
-    }
-
-    @Override
-    public String toString() {
-        return "Number: " + number + " Location: " + locations;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        Part part = (Part) obj;
-        return number == part.number;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(number);
-    }
-}
 
 public class Day3 {
     public static void main(String[] args) throws IOException {
