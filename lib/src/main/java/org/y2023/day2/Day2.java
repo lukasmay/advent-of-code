@@ -4,7 +4,7 @@ import java.io.*;
 
 public class Day2 {
     public static void main(String[] args) throws IOException {
-        String input_file = "/Users/lukasmay/git/adventofcode2023/Input/day2.txt";
+        String input_file = "lib/src/main/resources/y2023/day2.txt";
         System.out.println(part1(input_file));
         System.out.println(part2(input_file));
     }
