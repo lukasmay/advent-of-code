@@ -14,7 +14,7 @@ public class Day1 {
         int current = 0;
         int total = 0;
         try {
-            Scanner scanner = new Scanner(new File("2021/input/day1.txt"));
+            Scanner scanner = new Scanner(new File("lib/src/main/java/org/y2021/resources/day1.txt"));
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 current = Integer.valueOf(line);

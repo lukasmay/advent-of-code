@@ -11,7 +11,7 @@ bonus = 0
 
 
 
-file = open('input.txt','r')
+file = open('lib/src/main/java/org/y2022/resources/day2.txt','r')
 for round in file:
 	round = round[0:3]
 	if ("X" in round):

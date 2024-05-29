@@ -1,4 +1,4 @@
-file = open('input.txt','r')
+file = open('lib/src/main/java/org/y2022/resources/day3.txt','r')
 result = ['']
 score = 0
 NUM = 31

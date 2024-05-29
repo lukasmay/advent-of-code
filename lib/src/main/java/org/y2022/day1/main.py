@@ -1,4 +1,4 @@
-file = open('/Users/lukasmay/Documents/Github/AdventOfCode/2022/Day1/input.txt','r')
+file = open('lib/src/main/java/org/y2022/resources/day1.txt','r')
 mostCalories = [0]
 currentElf = 0
 for line in file:

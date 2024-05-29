@@ -30,7 +30,7 @@ public class Day9 {
         
 
         try {
-            Scanner scanner = new Scanner(new File("/Users/lukasmay/Documents/Github/AdventOfCode/2022/input/day9.txt"));
+            Scanner scanner = new Scanner(new File("lib/src/main/java/org/y2022/resources/day9.txt"));
             while (scanner.hasNextLine()) {
                 line = scanner.nextLine();
                 direction = line.substring(0, 1);
@@ -101,7 +101,7 @@ public class Day9 {
         
 
         try {
-            Scanner scanner = new Scanner(new File("/Users/lukasmay/Documents/Github/AdventOfCode/2022/input/day9.txt"));
+            Scanner scanner = new Scanner(new File("lib/src/main/java/org/y2022/resources/day9.txt"));
             while (scanner.hasNextLine()) {
                 line = scanner.nextLine();
                 direction = line.substring(0, 1);

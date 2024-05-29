@@ -18,7 +18,7 @@ public class Day8 {
         int totalCounter = 0; //Total number of trees in forest
         int[][] forest = new int[sizeOfForest][sizeOfForest];
         try {
-            Scanner scanner = new Scanner(new File("/Users/lukasmay/Documents/Github/AdventOfCode/2022/input/day8.txt"));
+            Scanner scanner = new Scanner(new File("lib/src/main/java/org/y2022/resources/day8.txt"));
             while (scanner.hasNextLine()) {
                 //Adding Rows to forest
                 line = scanner.nextLine();
@@ -117,7 +117,7 @@ public class Day8 {
         int counter = 0;
         int[][] forest = new int[sizeOfForest][sizeOfForest];
         try {
-            Scanner scanner = new Scanner(new File("/Users/lukasmay/Documents/Github/AdventOfCode/2022/input/day8.txt"));
+            Scanner scanner = new Scanner(new File("lib/src/main/java/org/y2022/resources/day8.txt"));
             while (scanner.hasNextLine()) {
                 //Adding Rows to forest
                 line = scanner.nextLine();

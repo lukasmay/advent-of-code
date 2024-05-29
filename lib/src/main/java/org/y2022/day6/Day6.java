@@ -14,7 +14,7 @@ public class Day6 {
 		String current = "mrzpvdfblmhlzr";
 		int i = 0;
 		try {
-			Scanner scanner = new Scanner(new File("input.txt"));
+			Scanner scanner = new Scanner(new File("lib/src/main/java/org/y2022/resources/day6.txt"));
 			while (scanner.hasNextLine()) {
 				String line = scanner.nextLine();
 				char[] input = line.toCharArray();
