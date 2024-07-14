@@ -112,25 +112,15 @@ public class Day5 {
                             visited.add(false);
                             seeds.get(i).setMinMax(start + conversion, max + conversion);
                             visited.set(i, true);
-                        } else if (start < seed.getMin()) { // Low end out of range and high end in range
+                        } else if (start <= seed.getMin()) { // Low end out of range and high end in range
                             seeds.add(new SeedRange(max + 1, seed.getMax()));
                             visited.add(false);
                             seeds.get(i).setMinMax(seed.getMin() + conversion, max + conversion);
                             visited.set(i, true);
-                        } else if (max > seed.getMax()) { // Low end in range and high end out of range
+                        } else if (max >= seed.getMax()) { // Low end in range and high end out of range
                             seeds.add(new SeedRange(seed.getMin(), start - 1));
                             visited.add(false);
                             seeds.get(i).setMinMax(start + conversion, seed.getMax() + conversion);
-                            visited.set(i, true);
-                        } else if (start == seed.getMin()) { // Low end is the same
-                            seeds.add(new SeedRange(max + 1, seed.getMax()));
-                            visited.add(false);
-                            seeds.get(i).setMinMax(start + conversion, max + conversion);
-                            visited.set(i, true);
-                        } else if (max == seed.getMax()) { // High end is the same
-                            seeds.add(new SeedRange(seed.getMin(), start - 1));
-                            visited.add(false);
-                            seeds.get(i).setMinMax(start + conversion, max + conversion);
                             visited.set(i, true);
                         } else {
                             System.out.println("Error: " + seed + " " + start + " " + max);
