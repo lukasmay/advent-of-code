@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 public class Day7 {
 
-    public static final List<String> cardValues = Arrays.asList("A", "K", "Q", "J", "T", "9", "8", "7", "6", "5", "4", "3", "2", "J");
+    public static final List<Character> cardValues = Arrays.asList('A', 'K', 'Q', 'T', '9', '8', '7', '6', '5', '4', '3', '2', 'J');
     public static void main(String[] args) {
         try {
             String input = "lib/src/main/java/org/y2023/resources/day7.txt";

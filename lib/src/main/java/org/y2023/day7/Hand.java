@@ -2,10 +2,6 @@ package org.y2023.day7;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.HashSet;
-import java.util.Set;
-
-import org.checkerframework.checker.units.qual.C;
 
 public class Hand {
     private String cards;
@@ -15,6 +11,7 @@ public class Hand {
     public Hand(String cards, int bid) {
         this.cards = cards;
         this.bid = bid;
+        this.handType = HandType.HIGH_CARD;
 
         Map<Character, Integer> handTypeCount = new HashMap<>();
         int jCount = 0;
@@ -26,26 +23,38 @@ public class Hand {
             }
             // System.out.println(handTypeCount);
         }
-        for (char card : handTypeCount.keySet()) {
-            handTypeCount.put(card, handTypeCount.get(card) + jCount);
-        }
 
-        if (handTypeCount.containsValue(5)) {
+        if (jCount == 5) {
             this.handType = HandType.FIVE_OF_A_KIND;
-        } else if (handTypeCount.containsValue(4)) {
-            this.handType = HandType.FOUR_OF_A_KIND;
-        } else if (handTypeCount.containsValue(3)) {
-            this.handType = handTypeCount.containsValue(2) ? HandType.FULL_HOUSE : HandType.THREE_OF_A_KIND;
-        } else if (handTypeCount.containsValue(2)) {
-            if (handTypeCount.values().stream().filter(v -> v == 2).count() == 2) {
-                this.handType = HandType.TWO_PAIR;
+        }
+        for (char card : handTypeCount.keySet()) { // Need to put checks for not downgrading the handType
+            handTypeCount.put(card, handTypeCount.get(card) + jCount);
+
+            if (handTypeCount.containsValue(5)) {
+                betterHand(HandType.FIVE_OF_A_KIND);
+            } else if (handTypeCount.containsValue(4)) {
+                betterHand(HandType.FOUR_OF_A_KIND);
+            } else if (handTypeCount.containsValue(3) && handTypeCount.containsValue(2)) {
+                betterHand(HandType.FULL_HOUSE);
+            } else if (handTypeCount.containsValue(3)) {
+                betterHand(HandType.THREE_OF_A_KIND);
+            } else if (handTypeCount.values().stream().filter(v -> v == 2).count() == 2) {
+                betterHand(HandType.TWO_PAIR);
+            } else if (handTypeCount.values().stream().filter(v -> v == 2).count() == 1) {
+                betterHand(HandType.PAIR);
             } else {
-                this.handType = HandType.PAIR;
+                betterHand(HandType.HIGH_CARD);
             }
-        } else {
-            this.handType = HandType.HIGH_CARD;
+
+            handTypeCount.put(card, handTypeCount.get(card) - jCount);
         }
         
+    }
+
+    private void betterHand(HandType handType) {
+        if (this.handType.getStrength() < handType.getStrength()) {
+            this.handType = handType;
+        }
     }
 
     public HandType getHandType() {
@@ -56,8 +65,8 @@ public class Hand {
         return this.cards;
     }
 
-    public String getCard(int index) {
-        return this.cards.substring(index, index + 1);
+    public char getCard(int index) {
+        return this.cards.charAt(index);
     }
 
     public int getBid() {
