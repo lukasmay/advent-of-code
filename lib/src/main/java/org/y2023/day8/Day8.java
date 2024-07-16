@@ -15,7 +15,7 @@ public class Day8 {
     public static void main(String[] args) {
         try {
             String input = "lib/src/main/java/org/y2023/resources/day8.txt";
-            // System.out.println("Part1: " + part1(input)); 12322250
+            System.out.println("Part1: " + part1(input));
             System.out.println("Part2: " + part2(input));
         } catch (IOException e) {
             System.out.println(e.getMessage());
@@ -78,16 +78,17 @@ public class Day8 {
         }
         scanner.close();
 
-        int steps = 0;
+        long steps = 0;
         List<String> current = new ArrayList<>();
 
         for(String id : nodes.keySet()) {
-            if (id.charAt(2) == 'A') {
+            if (id.endsWith("A")) {
                 current.add(id);
             }
         }
 
-        while (true) {
+        List<Long> pathLengths = new ArrayList<>();
+        while (current.size() > 0) {
             for (char c : instructions) {
                 if (c == 'L') {
                     for (int i = 0; i < current.size(); i++) {
@@ -99,11 +100,28 @@ public class Day8 {
                     }
                 }
                 steps++;
-                
-                if (current.stream().allMatch(id -> id.charAt(2) == 'Z')) {
-                    return steps;
+
+                for (int i = 0; i < current.size(); i++) {
+                    if (current.get(i).endsWith("Z")) {
+                        pathLengths.add(steps);
+                        current.remove(i);
+                    }
                 }
             }
         }
+
+        return lcmOfList(pathLengths);
+    }
+
+    private static long gcd(long a, long b) {
+        return b == 0 ? a : gcd(b, a % b);
+    }
+
+    private static long lcmOfList(List<Long> values) {
+        long result = values.get(0);
+        for (int i = 1; i < values.size(); i++) {
+            result = (result / gcd(result, values.get(i))) * values.get(i);
+        }
+        return result;
     }
 }
