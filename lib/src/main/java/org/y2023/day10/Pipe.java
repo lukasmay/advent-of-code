@@ -1,16 +1,18 @@
 package org.y2023.day10;
 
 public class Pipe {
+    private char pipeSymbol;
     private int x;
     private int y;
     private int distance;
-    private Direction[] pipeConnections;
+    private Direction[] pipeDirections;
 
     public Pipe(int x, int y, char type) {
+        this.pipeSymbol = type;
         this.distance = 0;
         this.x = x;
         this.y = y;
-        this.pipeConnections = new Direction[2];
+        this.pipeDirections = Pipes.fromChar(type);
     }
 
     public void setDistance(int distance) {
@@ -29,7 +31,16 @@ public class Pipe {
         return distance;
     }
 
-    public Direction[] getPipeConnections() {
-        return pipeConnections;
+    public char getPipeSymbol() {
+        return pipeSymbol;
+    }
+
+    public Direction[] getPipDirections() {
+        return pipeDirections;
+    }
+
+    @Override
+    public String toString() {
+        return Character.toString(this.pipeSymbol);
     }
 }
