@@ -1,5 +1,3 @@
-package org.y2021.day1;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;

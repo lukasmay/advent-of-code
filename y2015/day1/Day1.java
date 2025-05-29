@@ -1,5 +1,3 @@
-package org.y2015.day1;
-
 public class Day1{
     public static void main(String[] args) {
 		part1();
