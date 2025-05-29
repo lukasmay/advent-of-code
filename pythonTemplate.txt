@@ -1,5 +1,0 @@
-x = list(map(str.splitlines, open(0).read().strip().split("\n\n")))
-
-grid = [list(map(int, line)) for line in open(0).read().splitlines()]
-
-x = [list(map(int, p.split(","))) for p in line.strip().split(" -> ")]

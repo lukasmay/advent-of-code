@@ -1,14 +1,13 @@
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.io.IOException;
 
-public class Template {
+public class Day{{DAY}} {
 
     public static void main(String[] args) {
         try {
-            String input = "lib/src/main/java/org/y2023/resources/day.txt";
+            String input = "../resources/day{{DAY}}.txt";
             System.out.println("Part1: " + part1(input));
             System.out.println("Part2: " + part2(input));
         } catch (IOException e) {
@@ -21,7 +20,7 @@ public class Template {
         Scanner scanner = new Scanner(new File(input));
         while (scanner.hasNextLine()) {
             line = scanner.nextLine();
-
+            // Process line here
         }
         scanner.close();
         return 0;
@@ -32,7 +31,7 @@ public class Template {
         Scanner scanner = new Scanner(new File(input));
         while (scanner.hasNextLine()) {
             line = scanner.nextLine();
-
+            // Process line here
         }
         scanner.close();
         return 0;
