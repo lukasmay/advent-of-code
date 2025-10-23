@@ -12,7 +12,7 @@ def getIndexDict(line):
 
 
 def part1():
-    data = readFile('lib/src/main/java/org/y2022/resources/day5.txt')
+    data = readFile('../resources/day5.txt')
     stacks = [[] for _ in range(10)]
     lines = data.splitlines()
     indexDict = getIndexDict(lines[8])
@@ -37,7 +37,7 @@ def part1():
 
 
 def part2():
-    data = readFile('lib/src/main/java/org/y2022/resources/day5.txt')
+    data = readFile('../resources/day5.txt')
     stacks = [[] for _ in range(10)]
     lines = data.splitlines()
     indexDict = getIndexDict(lines[8])

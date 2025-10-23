@@ -1,4 +1,4 @@
-file = open('lib/src/main/java/org/y2022/resources/day3.txt','r')
+file = open('../resources/day3.txt','r')
 result = ['']
 score = 0
 NUM = 31
@@ -50,7 +50,7 @@ for letter in result:
 		score += (ord(letter) & NUM)
 print(score)
 
-file = open('input.txt','r')
+file = open('../resources/day3.txt','r')
 result = ['']
 score = 0
 NUM = 31

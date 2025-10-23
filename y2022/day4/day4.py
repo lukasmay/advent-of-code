@@ -1,4 +1,4 @@
-file = open('lib/src/main/java/org/y2022/resources/day4.txt','r')
+file = open('../resources/day4.txt','r')
 solution = 0
 for line in file:
 	if (line.rfind('\n') == -1):
@@ -21,7 +21,7 @@ print(solution)
 
 
 
-file = open('Data.txt','r')
+file = open('../resources/day4.txt','r')
 
 solution = 0
 i = 0

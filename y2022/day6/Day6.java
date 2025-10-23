@@ -1,5 +1,3 @@
-package org.y2022.day6;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -9,12 +7,13 @@ public class Day6 {
 		part1();
 		part2();
 	}
+	
 	//between 2733 and 2747
 	public static void part2(){
 		String current = "mrzpvdfblmhlzr";
 		int i = 0;
 		try {
-			Scanner scanner = new Scanner(new File("lib/src/main/java/org/y2022/resources/day6.txt"));
+			Scanner scanner = new Scanner(new File("../resources/day6.txt"));
 			while (scanner.hasNextLine()) {
 				String line = scanner.nextLine();
 				char[] input = line.toCharArray();
@@ -42,7 +41,7 @@ public class Day6 {
 		char third = '1';
 		int i = 0;
 		try {
-			Scanner scanner = new Scanner(new File("input.txt"));
+			Scanner scanner = new Scanner(new File("../resources/day6.txt"));
 			while (scanner.hasNextLine()) {
 				String line = scanner.nextLine();
 				char[] input = line.toCharArray();
