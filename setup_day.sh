@@ -116,12 +116,9 @@ EOF
 int part1(FILE *file) {
     char line[MAX_LINE_LENGTH];
     int result = 0;
-    
-    // Reset file pointer to beginning if needed
     fseek(file, 0, SEEK_SET);
 
     while (fgets(line, MAX_LINE_LENGTH, file) != NULL) {
-        // Logic here
     }
     return result;
 }
@@ -129,17 +126,17 @@ int part1(FILE *file) {
 int part2(FILE *file) {
     char line[MAX_LINE_LENGTH];
     int result = 0;
-
     fseek(file, 0, SEEK_SET);
 
     while (fgets(line, MAX_LINE_LENGTH, file) != NULL) {
-        // Logic here
     }
     return result;
 }
 
-int main() {
-    FILE *file = fopen("input.txt", "r");
+int main(int argc, char *argv[]) {
+    FILE *file = fopen(filename, "r");
+    const char *filename = (argc > 1) ? argv[1] : "test.txt";
+
     if (file == NULL) {
         perror("Error opening file");
         return EXIT_FAILURE;
