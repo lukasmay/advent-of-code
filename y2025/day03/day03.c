@@ -68,7 +68,7 @@ int main(int argc, char *argv[]) {
     return EXIT_FAILURE;
   }
 
-  // printf("Part 1: %d\n", part1(file));
+  printf("Part 1: %d\n", part1(file));
   printf("Part 2: %llu\n", part2(file));
 
   fclose(file);
